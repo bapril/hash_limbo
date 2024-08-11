@@ -1,7 +1,6 @@
 package hash_limbo
 
 import (
-	"fmt"
     "encoding/hex"
     "crypto/sha512"
 
@@ -19,8 +18,6 @@ func Hash_hex(bits int,input []byte) string {
 		if limbo(output,bits){
 			hex_out = hex.EncodeToString(output)
 			break
-		} else {
-			fmt.Printf(".")
 		}
 		nonce++
 	}
@@ -28,13 +25,12 @@ func Hash_hex(bits int,input []byte) string {
 }
 
 func limbo(in []byte,bits int) bool{
-	last := len(in) - 1
 	if bits >= 8 { // whole bytes
-		if in[last] == 0 {
+		if in[0] == 0 {
 			if bits == 8 {
 				return true
 			} else {
-				return limbo(in[:len(in)-1],bits - 8)
+				return limbo(in[1:],bits - 8)
 			}
 		} else {
 			return false
