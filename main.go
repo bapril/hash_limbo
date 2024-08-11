@@ -7,7 +7,7 @@ import (
 
 )
 
-func limbo_hash_hex(bits int,input []byte) string {
+func Hash_hex(bits int,input []byte) string {
 	var nonce int = 0;
 	var hex_out string;
 	for {
