@@ -19,6 +19,8 @@ func Hash_hex(bits int,input []byte) string {
 		if limbo(output,bits){
 			hex_out = hex.EncodeToString(output)
 			break
+		} else {
+			fmt.Printf(".")
 		}
 		nonce++
 	}
