@@ -1,13 +1,8 @@
 package hash_limbo
 
 import (
-    "fmt"
-	"os"
-	"strconv"
-	"time"
 
     "encoding/hex"
-    "crypto/rand"
     "crypto/sha512"
 
 )
