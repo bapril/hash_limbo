@@ -40,7 +40,7 @@ func limbo(in []byte,bits int) bool{
 		for j := bits; j > 0; j-- {
 			mask |= 1<<j
 		}
-		if uint8(in[last]) & mask == 0 {
+		if uint8(in[0]) & mask == 0 {
 			return true
 		} else {
 			return false
